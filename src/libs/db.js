@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 
 export default async function connectDB () {
   try {
-    await mongoose.connect('mongodb+srv://1ahmedhelal1:gTI4UmGrUG6KQ1u5@next-crud.cb5c4ru.mongodb.net/'
+    await mongoose.connect(process.env.MONGO_URL
     , {
       useNewUrlParser: true,
       useUnifiedTopology: true,

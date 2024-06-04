@@ -17,16 +17,17 @@ const Posts = () => {
 
 useEffect(()=>{
   const getData = async () =>{
-    try{
-      setLoading(true)
-      const res = await request.get("topics/")
+    setLoading(true)
+    request.get('/topics')
+    .then((res)=>{
+      setData(res.data.topics)
       setLoading(false)
-      // setIsDeleted((prev)=>!prev)
-        setData(res.data.topics)
-      
-    }catch(error){
+    })
+    .catch((error)=>{
+      setLoading(false)
       console.log(error);
-    }
+    })
+    
   }
 
   getData()

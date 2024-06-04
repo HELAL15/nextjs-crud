@@ -2,12 +2,13 @@
 
 import Form from '@/components/Form';
 import { request } from '@/request';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
+
 import React, { useState } from 'react';
 
 const AddPost = () => {
 
-  // const router = useRouter()
+  const router = useRouter()
 
   const [res , setRes] = useState(null)
 
@@ -31,7 +32,7 @@ const AddPost = () => {
           title: "",
           description: ""
         });
-        // router.push('/')
+        router.push('/')
       })
       .catch((err) => {
         console.error('Error adding post:', err);

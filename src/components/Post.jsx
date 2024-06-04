@@ -1,6 +1,7 @@
 'use client'
 
 import { request } from '@/request'
+import { BASE } from '@/utils/constants'
 import axios from 'axios'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -10,7 +11,7 @@ const Post = ({title , id , description , checkDelete}) => {
   const [loading , setLoading] = useState(false)
 
 
-
+console.log(BASE);
   const handleDelete = (del)=>{
     setLoading(true)
     request.delete(`topics/?id=${del}`)

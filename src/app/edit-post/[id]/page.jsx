@@ -3,8 +3,13 @@
 
 import React, { useEffect, useState } from 'react';
 import { request } from '@/request';
+import { useRouter } from 'next/navigation';
 
 const UpdatePost = ({params}) => {
+
+  const router = useRouter()
+
+
   const { id } = params
 
   const [data, setData] = useState({
@@ -40,6 +45,7 @@ const UpdatePost = ({params}) => {
           newTitle: '',
           newDesc: ''
         })
+        router.push('/')
       })
       .catch((err) => {
         console.error('Error updating post:', err);
