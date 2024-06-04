@@ -16,7 +16,13 @@
   }
 }
 
+input , textarea {
+  @apply text-black
+}
+
+
 body {
+  @apply text-white;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
